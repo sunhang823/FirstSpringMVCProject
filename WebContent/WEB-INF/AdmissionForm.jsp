@@ -12,7 +12,7 @@
       <p>
         Student's Hobby : <input typr="text" name="studentHobby"/>
       </p>
-      <input type="submit" value="Submit this from by clicking here">
+      <input type="submit" value="Submit this form by clicking here">
     </form>
 
   </body>
