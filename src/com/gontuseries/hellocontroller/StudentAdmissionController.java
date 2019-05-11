@@ -3,6 +3,7 @@ package com.gontuseries.hellocontroller;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,13 +21,11 @@ public class StudentAdmissionController {
 	}
 	
 	@RequestMapping(value="/submitAdmissionForm.html", method = RequestMethod.POST)
-	public ModelAndView submitAdmissionFrom(@RequestParam Map<String, String> reqPar) {
-		
-		String name = reqPar.get("studentName");
-		String hobby = reqPar.get("studentHobby");
+	public ModelAndView submitAdmissionFrom(@ModelAttribute("student1") Student student1) {
 		
 		ModelAndView model = new ModelAndView("AdmissionSuccess");
-		model.addObject("msg", "Details submitted by you: Name " + name +" , Hobby: " + hobby);
+		model.addObject("headerMessage", "Gontu College of Engineering, India");
+
 		
 		return model;
 	}
