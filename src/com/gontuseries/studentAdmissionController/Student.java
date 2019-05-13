@@ -1,4 +1,4 @@
-package com.gontuseries.hellocontroller;
+package com.gontuseries.studentAdmissionController;
 
 public class Student {
 	

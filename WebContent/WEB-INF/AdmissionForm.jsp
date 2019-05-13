@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <h1>${headerMessage}</h1>
     <h1>STUDENT ADMISSION FROM FOR ENGINEERING COURSES</h1>
     
     <form action="/FirstSpringMVCProject/submitAdmissionForm.html" method = "post">
