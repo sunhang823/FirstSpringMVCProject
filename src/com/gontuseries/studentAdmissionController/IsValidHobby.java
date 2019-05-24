@@ -13,7 +13,10 @@ import javax.validation.Payload;
 @Constraint(validatedBy = HobbyValidator.class)
 @Target( {ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
+
 public @interface IsValidHobby {
+	
+	String listOfValidHobbies() default "Music|Football|Cricket|Hockey";
 	
 	String message() default "Please provide a valid Hobby; " + 
 	        "accepted hobbies are - Music, Football, Cricket and Hockey (choose anyone)";

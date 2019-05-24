@@ -8,12 +8,21 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties({"studentSkills", "studentAddress"})
+@JsonPropertyOrder({"studentDOB", "student_name", "studentMobile", "studentAddress", "studentHobby", "studentSkills"})
 public class Student {
 	
+	@JsonProperty("student_name")
 	@Pattern(regexp = "[^0-9]*")
 	private String studentName;
 	
-	@Size(min = 2, max = 30) @IsValidHobby
+	@Size(min = 2, max = 30) @IsValidHobby(listOfValidHobbies = "Music|Football|Cricket|Hockey")
 	private String studentHobby;
 	
 
@@ -21,6 +30,7 @@ public class Student {
 
 	@Past
 	private Date studentDOB;
+	
 	private ArrayList<String> studentSkills;
 	
 	private Address studentAddress;
